@@ -61,7 +61,7 @@ class Piggy(PiggyParent):
         # TODO: check to see if it's safe before dancing
         
         for x in range(3):
-            self.circle()
+            self.test()
             time.sleep(2)
             # call other dance moves
 
@@ -69,7 +69,7 @@ class Piggy(PiggyParent):
         """ Does a 360 distance check and returns true if safe """
         pass
     
-    def circle(self):
+    def test(self):
         for x in range(2):
             self.circle(10)
             self.forward(10)
