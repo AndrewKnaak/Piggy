@@ -61,13 +61,24 @@ class Piggy(PiggyParent):
         # TODO: check to see if it's safe before dancing
         
         for x in range(3):
-            self.shake()
-            self.example_move()
+            self.circle()
+            time.sleep(2)
             # call other dance moves
 
     def safe_to_dance(self):
         """ Does a 360 distance check and returns true if safe """
         pass
+    
+    def circle(self):
+        for x in range(2):
+            self.circle(10)
+            self.forward(10)
+            time.sleep(.75)
+            self.deg_fwd(90 + 30)
+            time.sleep(.5)
+            self.deg_bwrd(360)
+
+
     
     def shake(self):
         self.deg_fwd(720)
