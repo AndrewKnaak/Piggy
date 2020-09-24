@@ -70,11 +70,16 @@ class Piggy(PiggyParent):
             self.fwd()
             time.sleep(1)
             self.turn_by_deg(45)
-            self.fwd(10)
-            for x in range(3):
-                self.turn_by_deg(360)
-                self.turn_by_deg(-360)
-            self.stop()
+            time.sleep(.75)
+            self.sevo(1100)
+            time.sleep(1)
+            self.servo(1700)
+            time.sleep(1)
+            self.back()
+            time.sleep(1)
+            self.turn_by_deg(360)
+            self.turn_by_deg(-360)
+
 
     def safe_to_dance(self):
         """ Does a 360 distance check and returns true if safe """
