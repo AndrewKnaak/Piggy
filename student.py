@@ -67,16 +67,9 @@ class Piggy(PiggyParent):
             #self.entireflex()
 
     def checkrotate(self):
-            self.servo(1850)
+            self.fwd()
             time.sleep(1)
-            self.stop()
-            self.servo(1250)
-            time.sleep(1)
-            self.stop()
-            self.fwd(20)
-            self.stop()
             self.turn_by_deg(45)
-            self.stop()
             self.fwd(10)
             for x in range(3):
                 self.turn_by_deg(360)
