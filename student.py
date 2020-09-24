@@ -70,15 +70,6 @@ class Piggy(PiggyParent):
         """ Does a 360 distance check and returns true if safe """
         pass
     
-    def test(self):
-        for x in range(2):
-            self.circle(10)
-            self.forward(10)
-            time.sleep(.75)
-            self.deg_fwd(90 + 30)
-            time.sleep(.5)
-            self.deg_bwrd(360)
-
 
     
     def shake(self):
