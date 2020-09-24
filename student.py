@@ -68,16 +68,16 @@ class Piggy(PiggyParent):
 
     def checkrotate(self):
         self.servo(1850)
-        time.sleep(1)
         self.servo(1250)
-        time.sleep(2)
-        self.turn_by_deg(45)
+        self.fwd(20)
         time.sleep(1)
+        self.turn_by_deg(45)
+        time.sleep(.5)
         for x in range(3):
-            self.right()
-            self.sleep(1)
-            self.left()
-            self.sleep(1)
+            self.turn_by_deg(360)
+            time.sleep(1)
+            self.turn_by_deg(-360)
+            time.sleep(1)
         self.stop()
 
     def safe_to_dance(self):
