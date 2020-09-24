@@ -71,14 +71,14 @@ class Piggy(PiggyParent):
             time.sleep(1)
             self.turn_by_deg(45)
             time.sleep(.75)
-            self.servo(1100)
+            self.servo(1000)
             time.sleep(1)
-            self.servo(1700)
+            self.servo(2000)
             time.sleep(1)
             self.back()
             time.sleep(1)
-            self.turn_by_deg(360)
-            self.turn_by_deg(-360)
+            self.deg_fwd(360)
+            self.deg_back(360)
 
 
     def safe_to_dance(self):
