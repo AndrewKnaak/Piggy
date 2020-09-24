@@ -68,11 +68,11 @@ class Piggy(PiggyParent):
 
     def checkrotate(self):
         self.servo(1850)
-        self.servo(1250)
-        self.fwd(20)
-        time.sleep(1)
-        self.turn_by_deg(45)
         time.sleep(.5)
+        self.servo(1250)
+        time.sleep(.5)
+        self.fwd(20)
+        self.turn_by_deg(45)
         for x in range(3):
             self.turn_by_deg(360)
             time.sleep(1)
