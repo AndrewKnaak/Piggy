@@ -64,7 +64,7 @@ class Piggy(PiggyParent):
             self.spinandshake()
             #self.wheeliewiggle()
             #self.forwardspin()
-            #self.entireflex()
+            self.entireflex()
 
     def checkrotate(self):
         self.servo(1500)
