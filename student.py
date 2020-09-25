@@ -62,7 +62,7 @@ class Piggy(PiggyParent):
         for x in range(1):
             self.checkrotate()
             self.spinandshake()
-            #self.reverseparty()
+            #self.wheeliewiggle()
             #self.forwardspin()
             #self.entireflex()
 
@@ -101,6 +101,34 @@ class Piggy(PiggyParent):
             time.sleep(.2)
             self.turn_to_deg(70)
         self.stop()
+    
+    def weeliewiggle(self):
+        self.set_motor_power(100)
+        self.fwd()
+        time.sleep(.5)
+        self.back()
+        time.sleep(.1)
+        self.set_motor_power(80)
+        self.stop()
+        for x in range(5):
+            self.turn_to_deg(80)
+            self.fwd()
+            time.sleep(.5)
+            self.turn_to_deg(100)
+            self.back()
+            time.sleep(.5)
+        for x in range(5):
+            self.turn_to_deg(100)
+            self.fwd()
+            time.sleep(.5)
+            self.turn_to_deg(80)
+            self.back()
+            time.sleep(.5)
+        self.stop()
+
+    def entireflex(self):
+        
+
 
 
 
