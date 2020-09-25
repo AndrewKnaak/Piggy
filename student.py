@@ -67,18 +67,21 @@ class Piggy(PiggyParent):
             #self.entireflex()
 
     def checkrotate(self):
-            self.fwd()
-            time.sleep(1)
-            self.turn_by_deg(45)
-            time.sleep(.75)
-            self.servo(1000)
-            time.sleep(1)
-            self.servo(2000)
-            time.sleep(1)
-            self.back()
-            time.sleep(1)
-            self.deg_fwd(360)
-            self.deg_back(360)
+        self.stop()
+        self.servo(1000)
+        time.sleep(.25)
+        self.servo(2000)
+        time.sleep(.25)
+        self.stop()
+        self.fwd()
+        time.sleep(.5)
+        self.turn_by_deg(45)
+        time.sleep(.75)
+        self.deg_fwd(720)
+        time.sleep(1.5)
+        self.deg_fwd(-720)
+        time.sleep(1.5)
+        self.stop()
 
 
     def safe_to_dance(self):
