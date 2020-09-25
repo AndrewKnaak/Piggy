@@ -67,7 +67,8 @@ class Piggy(PiggyParent):
             #self.entireflex()
 
     def checkrotate(self):
-        self.stop()
+        self.servo(1500)
+        time.sleep(.25)
         self.servo(1000)
         time.sleep(.25)
         self.servo(2000)
@@ -127,6 +128,21 @@ class Piggy(PiggyParent):
         self.stop()
 
     def entireflex(self):
+        self.servo(1500)
+        time.sleep(.25)
+        self.right()
+        time.sleep(1.)
+        self.deg_fwd(180)
+        time.sleep(.5)
+        self.servo(1000)
+        time.sleep(.5)
+        self.deg_fwd(0)
+        time.sleep(.5)
+        self.servo(2000)
+        time.sleep(.5)
+        self.left()
+        time.sleep(1.)
+
         
 
 
