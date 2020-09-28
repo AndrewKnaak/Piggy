@@ -60,16 +60,15 @@ class Piggy(PiggyParent):
         """A higher-ordered algorithm to make your robot dance"""
         # TODO: check to see if it's safe before dancing
         for x in range(1):
-            #self.checkrotate()
+            self.checkrotate()
             self.spinandshake()
-            #self.wheeliewiggle()
+            self.wheeliewiggle()
             #self.forwardspin()
-            #self.entireflex()
+            self.entireflex()
 
     def checkrotate(self):
         """Checks to the left and right with head, then spins"""
         # Head movement first
-        self.turn_to_deg(90)
         self.servo(1500)
         time.sleep(.5)
         self.servo(1200)
@@ -86,7 +85,7 @@ class Piggy(PiggyParent):
     def spinandshake(self):
         """Spins for fun, then starts to shake"""
         #Face forward
-        self.turn_to_deg(90)
+        self.turn_to_deg(0)
         #Starting to spin
         self.right(primary=100, counter=0)
         time.sleep(1)
@@ -109,9 +108,10 @@ class Piggy(PiggyParent):
     def weeliewiggle(self):
         """Do a wheelie then wiggle to the right and go back to orgin""" 
         # Wheelie
+        self.turn_to_deg(0)
         self.fwd(left=100,right=100)
         time.sleep(1)
-        self.back()
+        self.back(left=100,right=100)
         time.sleep(.1)
         self.fwd()
         time.sleep(1)
@@ -131,11 +131,11 @@ class Piggy(PiggyParent):
             self.turn_to_deg(80)
             self.back()
             time.sleep(.5)
-        self.turn_to_deg(90)
         self.stop()
 
     def entireflex(self):
-        """Moves his wheels and head simultaneously, mayber?"""
+        """Moves his wheels and head simultaneously, maybe?"""
+        self.turn_to_deg(0)
         self.servo(1500)
         time.sleep(.25)
         self.right()
