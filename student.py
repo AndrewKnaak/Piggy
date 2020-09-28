@@ -67,6 +67,8 @@ class Piggy(PiggyParent):
             self.entireflex()
 
     def checkrotate(self):
+        """Checks to the left and right with head, then spins"""
+        # Head movement first
         self.servo(1500)
         time.sleep(.25)
         self.servo(1000)
@@ -74,6 +76,7 @@ class Piggy(PiggyParent):
         self.servo(2000)
         time.sleep(.25)
         self.stop()
+        # Starting to rotate here
         self.fwd()
         time.sleep(.5)
         self.stop()
@@ -86,12 +89,15 @@ class Piggy(PiggyParent):
         self.stop()
 
     def spinandshake(self):
+        """Spins for fun, then starts to shake"""
+        #Starting to spin
         self.right(primary=100, counter=0)
         time.sleep(1)
         self.stop()
         self.left(primary=100, counter=0)
         time.sleep(1)
         self.stop()
+        #Starts to shake, maybe?
         for x in range (5):
             self.turn_to_deg(90)
             self.fwd()
@@ -104,12 +110,15 @@ class Piggy(PiggyParent):
         self.stop()
     
     def weeliewiggle(self):
+        """Do a wheelie then wiggle to the right and go back to orgin""" 
+        # Wheelie
         self.fwd()
         time.sleep(1)
         self.back()
         time.sleep(.1)
         self.fwd()
         time.sleep(1)
+        # Going to the right by wiggling
         for x in range(5):
             self.turn_to_deg(80)
             self.fwd()
@@ -117,6 +126,7 @@ class Piggy(PiggyParent):
             self.turn_to_deg(100)
             self.back()
             time.sleep(.5)
+        # Returning to original position before going to the right 
         for x in range(5):
             self.turn_to_deg(100)
             self.fwd()
@@ -127,6 +137,7 @@ class Piggy(PiggyParent):
         self.stop()
 
     def entireflex(self):
+        """Moves his wheels and head simultaneously, mayber?"""
         self.servo(1500)
         time.sleep(.25)
         self.right()
