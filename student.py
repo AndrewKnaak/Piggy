@@ -61,20 +61,20 @@ class Piggy(PiggyParent):
         # TODO: check to see if it's safe before dancing
         for x in range(1):
             self.checkrotate()
-            self.spinandshake()
+            #self.spinandshake()
             #self.wheeliewiggle()
             #self.forwardspin()
-            self.entireflex()
+            #self.entireflex()
 
     def checkrotate(self):
         """Checks to the left and right with head, then spins"""
         # Head movement first
         self.servo(1500)
         time.sleep(.25)
-        self.servo(1000)
-        time.sleep(.25)
-        self.servo(2000)
-        time.sleep(.25)
+        self.servo(1200)
+        time.sleep(.3)
+        self.servo(1800)
+        time.sleep(.3)
         self.stop()
         # Starting to rotate here
         self.fwd()
@@ -83,9 +83,7 @@ class Piggy(PiggyParent):
         self.turn_by_deg(45)
         time.sleep(.75)
         self.turn_by_deg(720)
-        time.sleep(1.5)
         self.turn_by_deg(-720)
-        time.sleep(1.5)
         self.stop()
 
     def spinandshake(self):
@@ -144,11 +142,11 @@ class Piggy(PiggyParent):
         time.sleep(1.)
         self.deg_fwd(180)
         time.sleep(.5)
-        self.servo(1000)
+        self.servo(1200)
         time.sleep(.5)
         self.deg_fwd(0)
         time.sleep(.5)
-        self.servo(2000)
+        self.servo(1800)
         time.sleep(.5)
         self.left()
         time.sleep(1.)
