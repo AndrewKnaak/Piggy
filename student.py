@@ -60,8 +60,8 @@ class Piggy(PiggyParent):
         """A higher-ordered algorithm to make your robot dance"""
         # TODO: check to see if it's safe before dancing
         for x in range(1):
-            self.checkrotate()
-            #self.spinandshake()
+            #self.checkrotate()
+            self.spinandshake()
             #self.wheeliewiggle()
             #self.forwardspin()
             #self.entireflex()
@@ -109,7 +109,7 @@ class Piggy(PiggyParent):
     def weeliewiggle(self):
         """Do a wheelie then wiggle to the right and go back to orgin""" 
         # Wheelie
-        self.fwd()
+        self.fwd(left=100,right=100)
         time.sleep(1)
         self.back()
         time.sleep(.1)
