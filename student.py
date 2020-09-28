@@ -104,13 +104,12 @@ class Piggy(PiggyParent):
         self.stop()
     
     def weeliewiggle(self):
-        self.set_motor_power(100)
         self.fwd()
-        time.sleep(.5)
+        time.sleep(1)
         self.back()
         time.sleep(.1)
-        self.set_motor_power(80)
-        self.stop()
+        self.fwd()
+        time.sleep(1)
         for x in range(5):
             self.turn_to_deg(80)
             self.fwd()
