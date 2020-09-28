@@ -70,12 +70,11 @@ class Piggy(PiggyParent):
         """Checks to the left and right with head, then spins"""
         # Head movement first
         self.servo(1500)
-        time.sleep(.25)
+        time.sleep(.5)
         self.servo(1200)
-        time.sleep(.3)
+        time.sleep(.5)
         self.servo(1800)
-        time.sleep(.3)
-        self.stop()
+        time.sleep(.5)
         # Starting to rotate here
         self.fwd()
         time.sleep(.5)
@@ -88,6 +87,8 @@ class Piggy(PiggyParent):
 
     def spinandshake(self):
         """Spins for fun, then starts to shake"""
+        #Face forward
+        self.turn_to_deg(90)
         #Starting to spin
         self.right(primary=100, counter=0)
         time.sleep(1)
