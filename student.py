@@ -131,6 +131,7 @@ class Piggy(PiggyParent):
             self.turn_to_deg(80)
             self.back()
             time.sleep(.5)
+        self.turn_to_deg(90)
         self.stop()
 
     def entireflex(self):
