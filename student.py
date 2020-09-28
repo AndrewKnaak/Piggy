@@ -79,9 +79,11 @@ class Piggy(PiggyParent):
         self.fwd()
         time.sleep(.5)
         self.turn_by_deg(45)
-        time.sleep(.75)
+        time.sleep(1)
         self.turn_by_deg(720)
+        time.sleep(1)
         self.turn_by_deg(-720)
+        time.sleep(1)
 
     def spinandshake(self):
         """Spins for fun, then starts to shake"""
