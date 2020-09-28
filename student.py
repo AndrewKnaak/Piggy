@@ -62,7 +62,7 @@ class Piggy(PiggyParent):
         for x in range(1):
             self.checkrotate()
             self.spinandshake()
-            self.wheeliewiggle()
+            #self.wheeliewiggle()
             #self.forwardspin()
             self.entireflex()
 
