@@ -58,7 +58,8 @@ class Piggy(PiggyParent):
 
     def dance(self):
         """A higher-ordered algorithm to make your robot dance"""
-        # TODO: check to see if it's safe before dancing
+        if not self.safe_to_dance():
+            return False # SHUT IT DOWN
         for x in range(1):
             self.checkrotate()
             self.spinandshake()
@@ -158,7 +159,16 @@ class Piggy(PiggyParent):
 
     def safe_to_dance(self):
         """ Does a 360 distance check and returns true if safe """
-        pass
+        # Check for all fail/early-termination conditions
+        for _ in range(4):
+            if self.read_distance() < 300:
+                print("NOT SAFE TO DANCE!")
+                return False
+            else:
+                self.turn_by_deg(90) 
+        # After all checks have been done, we deduce it is safe
+        print("I AM THE BEST PROGRAMER TO EVER LIVE")
+        return True
     
 
     
