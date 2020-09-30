@@ -124,6 +124,8 @@ class Piggy(PiggyParent):
                 time.sleep(1)
                 self.fwd(left=-100,right=-100)
                 time.sleep(.2)
+                self.back()
+                time.sleep(.8)
         self.fwd()
         time.sleep(.5)
         # Going to the right by wiggling
@@ -159,7 +161,7 @@ class Piggy(PiggyParent):
             time.sleep(.2)
             self.turn_to_deg(0)
         # Time for some mini
-        if x in range(2):
+        if self in range(2):
             self.right(primary=0, counter=-50)
             time.sleep(.5)
             self.right(primary=0, counter=-70)
