@@ -113,7 +113,7 @@ class Piggy(PiggyParent):
         # Wheelie
         self.turn_to_deg(0)
         self.fwd(left=100,right=100)
-        time.sleep(.5)
+        time.sleep(1)
         self.back(left=100,right=100)
         time.sleep(.1)
         #self.fwd()
@@ -149,13 +149,19 @@ class Piggy(PiggyParent):
             self.right()
             time.sleep(.2)
             self.turn_to_deg(0)
-        # Time for some spins
+        # Time for some mini
         for self in range(2):
-            self.right()
-            time.sleep(1)
+            self.right(primary=0,counter=-50)
+            time.sleep(.5)
+            self.right(primary=0,counter=-70)
+            time.sleep(.5)
             self.right(primary=0,counter=-90)
+            time.sleep(.5)
+            self.right(primary=100,counter=0)
             time.sleep(1)
-        self.turn_to_deg(0)
+            self.right(primary=0,counter=-100)
+            time.sleep(1)
+            self.turn_to_deg(0)
         self.stop()
 
 
