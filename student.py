@@ -115,8 +115,8 @@ class Piggy(PiggyParent):
         time.sleep(1)
         self.back(left=100,right=100)
         time.sleep(.1)
-        self.fwd()
-        time.sleep(1)
+        #self.fwd()
+        #time.sleep()
         # Going to the right by wiggling
         for x in range(5):
             self.turn_to_deg(80)
@@ -133,7 +133,6 @@ class Piggy(PiggyParent):
             self.turn_to_deg(80)
             self.back()
             time.sleep(.5)
-        self.turn_to_deg(0)
         self.stop()
 
     def fwdbackparty(self):
@@ -162,7 +161,6 @@ class Piggy(PiggyParent):
 
     def entireflex(self):
         """Moves his wheels and head simultaneously, maybe?"""
-        self.turn_to_deg(0)
         self.servo(1500)
         time.sleep(.25)
         self.right()
@@ -177,6 +175,7 @@ class Piggy(PiggyParent):
         time.sleep(.5)
         self.left()
         time.sleep(1.)
+        self.turn_to_deg(0)
         self.stop()
 
         
