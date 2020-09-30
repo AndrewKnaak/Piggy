@@ -110,7 +110,7 @@ class Piggy(PiggyParent):
     
     def wheeliewiggle(self):
         """Do a wheelie then wiggle to the right and go back to orgin""" 
-        # Wheelie
+        "Wheelie"
         for x in range(3):
                 self.turn_to_deg(0)
                 self.fwd(left=100,right=100)
@@ -152,17 +152,17 @@ class Piggy(PiggyParent):
             self.turn_to_deg(0)
         # Time for some mini
         for self in range(2):
-            self.right(primary=0,counter=-50)
-            time.sleep(.5)
-            self.right(primary=0,counter=-70)
-            time.sleep(.5)
-            self.right(primary=0,counter=-90)
-            time.sleep(.5)
-            self.right(primary=100,counter=0)
-            time.sleep(1)
-            self.right(primary=0,counter=-100)
-            time.sleep(1)
-            self.turn_to_deg(0)
+                self.right(primary=0,counter=-50)
+                time.sleep(.5)
+                self.right(primary=0,counter=-70)
+                time.sleep(.5)
+                self.right(primary=0,counter=-90)
+                time.sleep(.5)
+                self.right(primary=100,counter=0)
+                time.sleep(1)
+                self.right(primary=0,counter=-100)
+                time.sleep(1)
+                self.turn_to_deg(0)
         self.stop()
 
 
