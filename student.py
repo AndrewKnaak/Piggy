@@ -111,13 +111,14 @@ class Piggy(PiggyParent):
     def wheeliewiggle(self):
         """Do a wheelie then wiggle to the right and go back to orgin""" 
         # Wheelie
-        self.turn_to_deg(0)
-        self.fwd(left=100,right=100)
-        time.sleep(1)
-        self.back(left=100,right=100)
-        time.sleep(.1)
-        #self.fwd()
-        #time.sleep()
+        for self in range(3):
+            self.turn_to_deg(0)
+            self.fwd(left=100,right=100)
+            time.sleep(1)
+            self.fwd(left=-100,right=-100)
+            time.sleep(.2)
+        self.fwd()
+        time.sleep(.5)
         # Going to the right by wiggling
         for x in range(5):
             self.turn_to_deg(80)
