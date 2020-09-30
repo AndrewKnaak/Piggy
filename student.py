@@ -138,7 +138,7 @@ class Piggy(PiggyParent):
     def fwdbackparty(self):
         """Go back and forth to make a wiggle, then wiggle side to side, and then do a few circles"""
         # Doing the wiggle motion 8 times
-        if x in range(8):
+        if self in range(8):
             self.fwd()
             time.sleep(.2)
             self.left()
