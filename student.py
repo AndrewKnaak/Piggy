@@ -98,14 +98,19 @@ class Piggy(PiggyParent):
         self.stop()
         #Starts to shake, maybe?
         for x in range (5):
-            self.turn_to_deg(90)
-            self.fwd()
-            time.sleep(.2)
+            self.turn_to_deg(0)
             self.turn_to_deg(110)
+            self.fwd()
             time.sleep(.3)
             self.back()
-            time.sleep(.2)
+            time.sleep(.3)
             self.turn_to_deg(70)
+            self.fwd()
+            time.sleep(.3)
+            self.back()
+            time.sleep(.3)
+
+
         self.stop()
     
     def wheeliewiggle(self):
