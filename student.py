@@ -108,7 +108,7 @@ class Piggy(PiggyParent):
             self.turn_to_deg(70)
         self.stop()
     
-    def weeliewiggle(self):
+    def wheeliewiggle(self):
         """Do a wheelie then wiggle to the right and go back to orgin""" 
         # Wheelie
         self.turn_to_deg(0)
