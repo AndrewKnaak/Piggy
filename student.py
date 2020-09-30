@@ -63,7 +63,7 @@ class Piggy(PiggyParent):
         for x in range(1):
             self.checkrotate()
             self.spinandshake()
-            #self.wheeliewiggle()
+            self.wheeliewiggle()
             self.fwdbackparty()
             self.entireflex()
 
@@ -80,7 +80,7 @@ class Piggy(PiggyParent):
         # Starting to rotate here
         self.fwd()
         time.sleep(.5)
-        self.turn_by_deg(45)
+        if self in range(5):
         self.turn_by_deg(720)
         self.turn_by_deg(-720)
         self.stop()
@@ -113,7 +113,7 @@ class Piggy(PiggyParent):
         # Wheelie
         self.turn_to_deg(0)
         self.fwd(left=100,right=100)
-        time.sleep(1)
+        time.sleep(.8)
         self.back(left=100,right=100)
         time.sleep(.1)
         #self.fwd()
@@ -150,6 +150,7 @@ class Piggy(PiggyParent):
             time.sleep(.2)
             self.turn_to_deg(0)
         # Time for some spins
+        for self in range(2):
         self.right()
         time.sleep(1)
         self.right(primary=0,counter=-90)
@@ -165,7 +166,7 @@ class Piggy(PiggyParent):
         self.servo(1500)
         time.sleep(.25)
         self.right()
-        time.sleep(1.)
+        time.sleep(.1)
         self.deg_fwd(180)
         time.sleep(.5)
         self.servo(1200)
