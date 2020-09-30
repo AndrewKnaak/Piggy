@@ -76,7 +76,7 @@ class Piggy(PiggyParent):
         time.sleep(.5)
         self.servo(1800)
         time.sleep(.5)
-        self.print("Did my head move?")
+        print("Did my head move?")
         # Starting to rotate here
         self.fwd()
         time.sleep(.5)
