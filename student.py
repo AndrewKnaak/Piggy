@@ -71,11 +71,12 @@ class Piggy(PiggyParent):
         """Checks to the left and right with head, then spins"""
         # Head movement first
         self.servo(1500)
-        time.sleep(.5)
+        time.sleep(1)
         self.servo(1200)
         time.sleep(.5)
         self.servo(1800)
         time.sleep(.5)
+        self.print("Did my head move?")
         # Starting to rotate here
         self.fwd()
         time.sleep(.5)
