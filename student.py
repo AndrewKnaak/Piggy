@@ -69,6 +69,7 @@ class Piggy(PiggyParent):
 
     def checkrotate(self):
         """Checks to the left and right with head, then spins"""
+        print("checkrotate activated")
         # Head movement first
         self.servo(1500)
         time.sleep(1)
@@ -76,7 +77,6 @@ class Piggy(PiggyParent):
         time.sleep(.5)
         self.servo(1800)
         time.sleep(.5)
-        print("Did my head move?")
         # Starting to rotate here
         self.fwd()
         time.sleep(.5)
@@ -87,6 +87,7 @@ class Piggy(PiggyParent):
 
     def spinandshake(self):
         """Spins for fun, then starts to shake"""
+        print("spinandshake activated")
         #Face forward
         self.turn_to_deg(0)
         #Starting to spin
@@ -116,6 +117,7 @@ class Piggy(PiggyParent):
     def wheeliewiggle(self):
         """Do a wheelie then wiggle to the right and go back to orgin""" 
         "Wheelie"
+        print("wheeliewiggle activated")
         for x in range(3):
                 self.turn_to_deg(0)
                 self.fwd(left=100,right=100)
@@ -144,6 +146,7 @@ class Piggy(PiggyParent):
 
     def fwdbackparty(self):
         """Go back and forth to make a wiggle, then wiggle side to side, and then do a few circles"""
+        print("fwdbackparty activated")
         # Doing the wiggle motion 8 times
         if self in range(8):
             self.fwd()
@@ -174,7 +177,8 @@ class Piggy(PiggyParent):
 
 
     def entireflex(self):
-        """Moves his wheels and head simultaneously, maybe?"""
+        """Moves his wheels and head simultaneously"""
+        print("entireflex activated")
         self.servo(1500)
         time.sleep(.25)
         self.right()
