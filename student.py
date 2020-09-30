@@ -151,10 +151,10 @@ class Piggy(PiggyParent):
             self.turn_to_deg(0)
         # Time for some spins
         for self in range(2):
-        self.right()
-        time.sleep(1)
-        self.right(primary=0,counter=-90)
-        time.sleep(1)
+            self.right()
+            time.sleep(1)
+            self.right(primary=0,counter=-90)
+            time.sleep(1)
         self.turn_to_deg(0)
         self.stop()
 
