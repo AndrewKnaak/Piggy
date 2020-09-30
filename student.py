@@ -81,8 +81,8 @@ class Piggy(PiggyParent):
         self.fwd()
         time.sleep(.5)
         if self in range(5):
-        self.turn_by_deg(720)
-        self.turn_by_deg(-720)
+            self.turn_by_deg(720)
+            self.turn_by_deg(-720)
         self.stop()
 
     def spinandshake(self):
