@@ -150,11 +150,11 @@ class Piggy(PiggyParent):
         # Doing the wiggle motion 8 times
         if self in range(8):
             self.fwd()
-            time.sleep(.2)
+            time.sleep(.4)
             self.left()
             time.sleep(.2)
             self.back()
-            time.sleep(.2)
+            time.sleep(.4)
             self.right()
             time.sleep(.2)
             self.turn_to_deg(0)
