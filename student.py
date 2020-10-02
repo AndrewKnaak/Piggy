@@ -116,7 +116,7 @@ class Piggy(PiggyParent):
             time.sleep(.3)
             self.right(primary=-60, counter=-20)
             time.sleep(.3)
-        # Goint forward again
+        # Going forward again
         for x in range(5):
             self.left(primary=60, counter=20)
             time.sleep(.3)
@@ -217,7 +217,7 @@ class Piggy(PiggyParent):
         """ Does a 360 distance check and returns true if safe """
         # Check for all fail/early-termination conditions
         for _ in range(4):
-            if self.read_distance() < 500:
+            if self.read_distance() < 600:
                 print("NOT SAFE TO DANCE!")
                 return False
             else:
