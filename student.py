@@ -111,11 +111,13 @@ class Piggy(PiggyParent):
             self.back()
             time.sleep(.3)
         # Quinn's shuffle code with my own touch is after this
-        for x in range(12):
+        for x in range(10):
             self.left(primary=-60, counter=-20)
             time.sleep(.3)
             self.right(primary=-60, counter=-20)
             time.sleep(.3)
+        self.fwd()
+        time.sleep(3)
         self.stop()
     
     def wheeliewiggle(self):
