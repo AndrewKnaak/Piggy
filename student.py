@@ -80,7 +80,7 @@ class Piggy(PiggyParent):
         # Starting to rotate here
         self.fwd()
         time.sleep(.5)
-        if x in range(5):
+        for x in range(5):
             self.turn_by_deg(720)
             self.turn_by_deg(-720)
         self.stop()
@@ -160,7 +160,7 @@ class Piggy(PiggyParent):
         """Go back and forth to make a wiggle, then wiggle side to side, and then do a few circles"""
         print("fwdbackparty activated")
         # Doing the wiggle motion 8 times
-        if x in range(8):
+        for x in range(8):
             self.fwd()
             time.sleep(.4)
             self.left()
@@ -171,7 +171,7 @@ class Piggy(PiggyParent):
             time.sleep(.2)
             self.turn_to_deg(0)
         # Time for some mini
-        if x in range(2):
+        for x in range(2):
             self.right(primary=0, counter=-50)
             time.sleep(.5)
             self.right(primary=0, counter=-70)
