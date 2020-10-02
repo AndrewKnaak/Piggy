@@ -217,7 +217,7 @@ class Piggy(PiggyParent):
             else:
                 self.turn_by_deg(90) 
         # After all checks have been done, we deduce it is safe
-        print("I AM THE BEST PROGRAMER TO EVER LIVE")
+        print("I AM THE BEST PROGRAMMER TO EVER LIVE")
         return True
     
 
