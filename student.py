@@ -61,9 +61,9 @@ class Piggy(PiggyParent):
         if not self.safe_to_dance():
             return False # SHUT IT DOWN
         for x in range(1):
-            #self.checkrotate()
-            #self.spinandshake()
-            #self.wheeliewiggle()
+            self.checkrotate()
+            self.spinandshake()
+            self.wheeliewiggle()
             self.fwdbackparty()
             self.entireflex()
 
