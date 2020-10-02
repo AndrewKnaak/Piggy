@@ -183,6 +183,7 @@ class Piggy(PiggyParent):
             self.right(primary=0, counter=-100)
             time.sleep(1)
             self.turn_to_deg(0)
+        self.stop()
 
 
 
@@ -190,6 +191,8 @@ class Piggy(PiggyParent):
     def entireflex(self):
         """Moves his wheels and head simultaneously"""
         print("entireflex activated")
+        self.fwd()
+        time.sleep(.1)
         self.servo(1500)
         time.sleep(.25)
         self.right()
