@@ -160,7 +160,7 @@ class Piggy(PiggyParent):
         """Go back and forth to make a wiggle, then wiggle side to side, and then do a few circles"""
         print("fwdbackparty activated")
         # Doing the wiggle motion 8 times
-        if self in range(8):
+        for self in range(8):
             self.fwd()
             time.sleep(.4)
             self.left()
