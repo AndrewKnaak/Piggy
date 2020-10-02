@@ -80,7 +80,7 @@ class Piggy(PiggyParent):
         # Starting to rotate here
         self.fwd()
         time.sleep(.5)
-        if self in range(5):
+        if x in range(5):
             self.turn_by_deg(720)
             self.turn_by_deg(-720)
         self.stop()
@@ -160,29 +160,29 @@ class Piggy(PiggyParent):
         """Go back and forth to make a wiggle, then wiggle side to side, and then do a few circles"""
         print("fwdbackparty activated")
         # Doing the wiggle motion 8 times
-        for self in range(8):
-                self.fwd()
-                time.sleep(.4)
-                self.left()
-                time.sleep(.2)
-                self.back()
-                time.sleep(.4)
-                self.right()
-                time.sleep(.2)
-                self.turn_to_deg(0)
+        if x in range(8):
+            self.fwd()
+            time.sleep(.4)
+            self.left()
+            time.sleep(.2)
+            self.back()
+            time.sleep(.4)
+            self.right()
+            time.sleep(.2)
+            self.turn_to_deg(0)
         # Time for some mini
-        if self in range(2):
-                self.right(primary=0, counter=-50)
-                time.sleep(.5)
-                self.right(primary=0, counter=-70)
-                time.sleep(.5)
-                self.right(primary=0, counter=-90)
-                time.sleep(.5)
-                self.right(primary=100, counter=0)
-                time.sleep(1)
-                self.right(primary=0, counter=-100)
-                time.sleep(1)
-                self.turn_to_deg(0)
+        if x in range(2):
+            self.right(primary=0, counter=-50)
+            time.sleep(.5)
+            self.right(primary=0, counter=-70)
+            time.sleep(.5)
+            self.right(primary=0, counter=-90)
+            time.sleep(.5)
+            self.right(primary=100, counter=0)
+            time.sleep(1)
+            self.right(primary=0, counter=-100)
+            time.sleep(1)
+            self.turn_to_deg(0)
         self.stop()
 
 
