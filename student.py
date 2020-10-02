@@ -97,19 +97,23 @@ class Piggy(PiggyParent):
         self.left(primary=100, counter=0)
         time.sleep(1)
         self.stop()
-        #Starts to shake, maybe?
+        #Starts to shake
         for x in range (5):
             self.turn_to_deg(0)
             self.turn_to_deg(110)
             self.fwd()
             time.sleep(.3)
             self.back()
-            time.sleep(.3)
+            time.sleep(.4)
             self.turn_to_deg(70)
             self.fwd()
-            time.sleep(.3)
+            time.sleep(.4)
             self.back()
             time.sleep(.3)
+        self.fwd(left=100, right=100)
+        time.sleep(.3)
+        self.back()
+        time.sleep(.6)
         # Quinn's shuffle code with my own touch is after this
         for x in range(5):
             self.left(primary=-60, counter=-20)
