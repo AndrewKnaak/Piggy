@@ -267,10 +267,16 @@ class Piggy(PiggyParent):
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         
         # TODO: build self.quick_check() that does a fast, 3-part check instead of read_distance
-        while self.read_distance() > 250:
-            self.fwd()
+        self.fwd()
+        while True:
+            if self.read_distance() < self.SAFE_DISTANCE:
+                    self.stop()
+                    print("Object in the way")
+                    self.turn_by_deg(90)
+                    time.sleep(.1)
+            else:
+                self.fwd()
             time.sleep(.01)
-        self.stop()
         # TODO: scan so we can decide left or right
         # TODO: average the right side of the scan dict
         # TODO: average the left side of the scan dict
