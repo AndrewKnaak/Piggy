@@ -273,6 +273,7 @@ class Piggy(PiggyParent):
     
     def turn_until_clear(self):
         """ Rotate right until no obstacle is seen """
+        print("Will turn into clear")
         # make sure servo is straight
         self.servo(self.MIDPOINT)
         while self.read_distance() < self.SAFE_DISTANCE:
@@ -292,9 +293,7 @@ class Piggy(PiggyParent):
         while True:
             if not self.quick_check():
                     self.stop()
-                    print("Object in the way")
-                    self.turn_by_deg(90)
-                    time.sleep(.1)
+                    self.turn_until_clear()
             else:
                 self.fwd()
             time.sleep(.01)
