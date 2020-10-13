@@ -2,7 +2,7 @@
 from teacher import PiggyParent
 import sys
 import time
-
+from collections import OrderedDict
 class Piggy(PiggyParent):
 
     '''
@@ -255,10 +255,57 @@ class Piggy(PiggyParent):
         for angle in range(self.MIDPOINT-350, self.MIDPOINT+350, 3):
             self.servo(angle)
             self.scan_data[angle] = self.read_distance()
+        self.scan_data = OrderedDict(sorted(self.scan_data.items()))
+    
+    def right_or_left(self):
+        """Should I turn left or right?
+            Returns a 'r' or an 'l' based on scan data"""
+        self.scan()
+        #average up the distances on the right side
+        left_sum = 0
+        left_avg = 0
+        right_sum = 0
+        right_avg = 0
+        for angle in self.scan_data:
+            # average up the distances on the right side
+            if angle < self.MIDPOINT:
+                right_sum += self.scan_data[angle]
+                right_avg += 1  
+            else:
+                left_sum += self.scan_data[angle]
+                left_avg += 1
+            
+        left_avg = left_sum / left_avg
+        right_avg = right_sum / right_avg
+
+        if left_avg > right_avg:
+            return 'l'
+        else: 
+            return 'r'
+
+
 
     def obstacle_count(self):
+        # Gotten from the discord server
         """Does a 360 scan and returns the number of obstacles it sees"""
-        pass
+        # do a scan of the area in front of the robot
+        self.scan()
+        # FIGURE OUT HOW MANY OBSTACLES THERE WERE
+        see_an_object = False
+        count = 0
+
+        for angle in self.scan_data:
+            dist = self.scan_data[angle]
+            if dist < self.SAFE_DISTANCE and not see_an_object:
+                see_an_object = True
+                count += 1
+                print("~~~~ I SEE SOMETHING!!! ~~~~~")
+            elif dist > self.SAFE_DISTANCE and see_an_object:
+                see_an_object = False
+                print("I guess the object ended")
+
+            print("ANGLE:  %d  |  DIST: %d" % (angle, dist))
+        print("\nI saw %d objects" % count)
 
     def quick_check(self):
         """ Moves the servo to 3 angles and preforms a distance check """
@@ -293,7 +340,11 @@ class Piggy(PiggyParent):
         while True:
             if not self.quick_check():
                     self.stop()
-                    self.turn_until_clear()
+                    #self.turn_until_clear()
+                    if 'l' in self.right_or_left():
+                        self.turn_by_deg(-45)
+                    else:
+                        self.turn_by_deg(45)
             else:
                 self.fwd()
             time.sleep(.01)
