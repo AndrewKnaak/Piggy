@@ -324,7 +324,7 @@ class Piggy(PiggyParent):
         # make sure servo is straight
         self.servo(self.MIDPOINT)
         while self.read_distance() < self.SAFE_DISTANCE:
-            self.left(primary=40, counter=0)
+            self.left(primary=80, counter=0)
             time.sleep(.05)
         # stop motion before we end the method
         self.stop()
