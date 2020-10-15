@@ -344,7 +344,7 @@ class Piggy(PiggyParent):
                 turn_count += 1
                 self.stop()
                 #self.turn_until_clear()
-                if turn_count = 3 and turn_count % 3 == 0:
+                if turn_count % 3 == 0:
                     self.turn_to_deg(exit_ang)
                     self.back()
                     time.sleep(.5)
