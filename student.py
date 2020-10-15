@@ -250,10 +250,7 @@ class Piggy(PiggyParent):
         time.sleep(.25) # give your head time to move
         self.servo(2000) # look left
     
-    exit_ang = self.get_heading()
-
-    turn_count = 0
-
+    
     def scan(self):
         """Sweep the servo and populate the scan_data dictionary"""
         for angle in range(self.MIDPOINT-350, self.MIDPOINT+351, 100):
@@ -338,7 +335,9 @@ class Piggy(PiggyParent):
         print("-------- [ Press CTRL + C to stop me ] --------\n")
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         
-        # TODO: build self.quick_check() that does a fast, 3-part check instead of read_distance
+        exit_ang = self.get_heading()
+        turn_count = 0
+
         self.fwd()
         while True:
             if not self.quick_check():
