@@ -261,19 +261,19 @@ class Piggy(PiggyParent):
         """Should I turn left or right?
             Returns a 'r' or an 'l' based on scan data"""
         self.scan()
-        #average up the distances on the right side
+        #average up the distances on the right and left side
         left_sum = 0
         left_avg = 0
         right_sum = 0
         right_avg = 0
         for angle in self.scan_data:
-            # average up the distances on the right side
+            # average up the distances on the right side then left
             if angle < self.MIDPOINT:
                 right_sum += self.scan_data[angle]
-                right_avg += 1  
+                right_avg += 20  
             else:
                 left_sum += self.scan_data[angle]
-                left_avg += 1
+                left_avg += 20
             
         left_avg = left_sum / left_avg
         right_avg = right_sum / right_avg
