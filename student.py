@@ -249,6 +249,10 @@ class Piggy(PiggyParent):
         self.servo(1000) # look right
         time.sleep(.25) # give your head time to move
         self.servo(2000) # look left
+    
+    exit_ang = self.get_heading()
+
+    turn_count = 0
 
     def scan(self):
         """Sweep the servo and populate the scan_data dictionary"""
@@ -282,7 +286,6 @@ class Piggy(PiggyParent):
             return 'l'
         else: 
             return 'r'
-
 
 
     def obstacle_count(self):
@@ -339,12 +342,15 @@ class Piggy(PiggyParent):
         self.fwd()
         while True:
             if not self.quick_check():
-                    self.stop()
-                    #self.turn_until_clear()
-                    if 'l' in self.right_or_left():
-                        self.turn_by_deg(-45)
-                    else:
-                        self.turn_by_deg(45)
+                turn_count += 1
+                self.stop()
+                #self.turn_until_clear()
+                if turn_count > 3 and turn_count % 5 == 0:
+                    self.turn_to_deg(exit_ang)
+                elif 'l' in self.right_or_left():
+                    self.turn_by_deg(-45)
+                else:
+                    self.turn_by_deg(45)
             else:
                 self.fwd()
             time.sleep(.01)
