@@ -231,7 +231,7 @@ class Piggy(PiggyParent):
             else:
                 self.turn_by_deg(90) 
         # After all checks have been done, we deduce it is safe
-        print("I AM THE BEST PROGRAMMER TO EVER LIVE")
+        print("Safe to drive")
         return True
     
 
@@ -252,7 +252,7 @@ class Piggy(PiggyParent):
 
     def scan(self):
         """Sweep the servo and populate the scan_data dictionary"""
-        for angle in range(self.MIDPOINT-200, self.MIDPOINT+200, 3):
+        for angle in range(self.MIDPOINT-350, self.MIDPOINT+350, 3):
             self.servo(angle)
             self.scan_data[angle] = self.read_distance()
         self.scan_data = OrderedDict(sorted(self.scan_data.items()))
