@@ -253,7 +253,7 @@ class Piggy(PiggyParent):
     
     def scan(self):
         """Sweep the servo and populate the scan_data dictionary"""
-        for angle in range(self.MIDPOINT - 400, self.MIDPOINT + 400, 50):
+        for angle in range(self.MIDPOINT - 400, self.MIDPOINT + 400, 100):
             self.servo(angle)
             self.scan_data[angle] = self.read_distance()
         self.scan_data = OrderedDict(sorted(self.scan_data.items()))
@@ -313,9 +313,7 @@ class Piggy(PiggyParent):
         for ang in range(self.MIDPOINT - 100, self.MIDPOINT + 101, 100):
             self.servo(ang)
             time.sleep(.1)
-            if self.read_distance() < self.SAFE_DISTANCE:
-                return False
-            elif self.read_distance() < self.CLOSE_DISTANCE:
+            if self.read_distance() < self.CLOSE_DISTANCE:
                 return False
         # if the three-part check didn't freak out
         return True
