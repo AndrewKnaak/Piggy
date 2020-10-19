@@ -315,6 +315,8 @@ class Piggy(PiggyParent):
             time.sleep(.1)
             if self.read_distance() < self.SAFE_DISTANCE:
                 return False
+            elif self.read_distance() < self.CLOSE_DISTANCE:
+                return False
         # if the three-part check didn't freak out
         return True
     
