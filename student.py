@@ -253,7 +253,7 @@ class Piggy(PiggyParent):
     
     def scan(self):
         """Sweep the servo and populate the scan_data dictionary"""
-        for angle in range(self.MIDPOINT - 400, self.MIDPOINT + 400, 100):
+        for angle in range(self.MIDPOINT - 400, self.MIDPOINT + 400, 50):
             self.servo(angle)
             self.scan_data[angle] = self.read_distance()
         self.scan_data = OrderedDict(sorted(self.scan_data.items()))
