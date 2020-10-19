@@ -308,12 +308,12 @@ class Piggy(PiggyParent):
         print("\nI saw %d objects" % count)
 
     def quick_check(self):
-        """ Moves the servo to 9 angles and preforms a distance check """
+        """ Moves the servo to 3 angles and preforms a distance check """
         # loop 3 times and move the servo
         for ang in range(self.MIDPOINT - 200, self.MIDPOINT + 200, 200):
             self.servo(ang)
             time.sleep(.1)
-            if self.read_distance() < self.CLOSE_DISTANCE:
+            if self.read_distance() < self.SAFE_DISTANCE:
                 return False
         # if the three-part check didn't freak out
         return True
@@ -323,7 +323,7 @@ class Piggy(PiggyParent):
         print("Will turn into clear")
         # make sure servo is straight
         self.servo(self.MIDPOINT)
-        while self.read_distance() < self.SAFE_DISTANCE:
+        while self.read_distance() < self.CLOSE_DISTANCE:
             self.left(primary= 40, counter= 0)
             time.sleep(.05)
         # stop motion before we end the method
