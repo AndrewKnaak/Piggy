@@ -308,9 +308,9 @@ class Piggy(PiggyParent):
         print("\nI saw %d objects" % count)
 
     def quick_check(self):
-        """ Moves the servo to 3 angles and preforms a distance check """
+        """ Moves the servo to 9 angles and preforms a distance check """
         # loop 3 times and move the servo
-        for ang in range(self.MIDPOINT - 100, self.MIDPOINT + 101, 100):
+        for ang in range(self.MIDPOINT - 200, self.MIDPOINT + 200, 100):
             self.servo(ang)
             time.sleep(.1)
             if self.read_distance() < self.CLOSE_DISTANCE:
@@ -356,6 +356,8 @@ class Piggy(PiggyParent):
             else:
                 self.fwd()
             time.sleep(.01)
+    # It would be awesome if I could find the least amount of room to turn then, if it was reading
+    # a distance less than that it backs up to where it reads a far enough distance to turn
         
 
 
