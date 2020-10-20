@@ -323,7 +323,7 @@ class Piggy(PiggyParent):
         print("Will turn into clear")
         # make sure servo is straight
         self.servo(self.MIDPOINT)
-        while self.read_distance() < self.SAFE_DISTANCE:
+        while self.read_distance() < self.SAFE_DISTANCE - 40:
             self.left(primary= 60, counter= 0)
             time.sleep(.05)
         # stop motion before we end the method
@@ -343,6 +343,7 @@ class Piggy(PiggyParent):
             if not self.quick_check():
                 turn_count += 1
                 self.stop()
+                #self.turn_until_clear()
                 if turn_count % 4 == 0:
                     self.back()
                     time.sleep(.75)
