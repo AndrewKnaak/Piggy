@@ -18,10 +18,10 @@ class Piggy(PiggyParent):
         MAGIC NUMBERS <-- where we hard-code our settings
         '''
         self.LEFT_DEFAULT = 80
-        self.RIGHT_DEFAULT = 76
+        self.RIGHT_DEFAULT = 80
         self.SAFE_DISTANCE = 400
         self.CLOSE_DISTANCE = 50
-        self.MIDPOINT = 1325  # what servo command (1000-2000) is straight forward for your bot?
+        self.MIDPOINT = 1500  # what servo command (1000-2000) is straight forward for your bot?
         self.set_motor_power(self.MOTOR_LEFT + self.MOTOR_RIGHT, 0)
         self.load_defaults()
         
@@ -271,10 +271,10 @@ class Piggy(PiggyParent):
             # average up the distances on the right side then left
             if angle < self.MIDPOINT:
                 right_sum += self.scan_data[angle]
-                right_avg += 1  
+                right_avg += 5  
             else:
                 left_sum += self.scan_data[angle]
-                left_avg += 1
+                left_avg += 5
             
         left_avg = left_sum / left_avg
         right_avg = right_sum / right_avg
