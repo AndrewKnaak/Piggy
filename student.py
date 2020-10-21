@@ -344,7 +344,7 @@ class Piggy(PiggyParent):
                 turn_count += 1
                 self.stop()
                 #self.turn_until_clear()
-                if turn_count % 4 == 0:
+                if turn_count % 6 == 0:
                     self.back()
                     time.sleep(.75)
                     self.stop()
@@ -359,6 +359,10 @@ class Piggy(PiggyParent):
             time.sleep(.01)
     # It would be awesome if I could find the least amount of room to turn then, if it was reading
     # a distance less than that it backs up to where it reads a far enough distance to turn
+
+    # It would be awesome if it could have another function that sees beyond the objects to see future objects
+    # Then proceed inbetween them and then take another look around to see the other objects, then proceeds inbetween them
+    
         
 
 
