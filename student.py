@@ -253,7 +253,7 @@ class Piggy(PiggyParent):
     
     def scan(self):
         """Sweep the servo and populate the scan_data dictionary"""
-        for angle in range(self.MIDPOINT - 400, self.MIDPOINT + 400, 100):
+        for angle in range(self.MIDPOINT - 400, self.MIDPOINT + 401, 100):
             self.servo(angle)
             self.scan_data[angle] = self.read_distance()
         self.scan_data = OrderedDict(sorted(self.scan_data.items()))
@@ -362,7 +362,7 @@ class Piggy(PiggyParent):
 
     # It would be awesome if it could have another function that sees beyond the objects to see future objects
     # Then proceed inbetween them and then take another look around to see the other objects, then proceeds inbetween them
-    
+
         
 
 
