@@ -18,7 +18,7 @@ class Piggy(PiggyParent):
         MAGIC NUMBERS <-- where we hard-code our settings
         '''
         self.LEFT_DEFAULT = 80
-        self.RIGHT_DEFAULT = 80
+        self.RIGHT_DEFAULT = 83
         self.SAFE_DISTANCE = 400
         self.CLOSE_DISTANCE = 50
         self.MIDPOINT = 1500  # what servo command (1000-2000) is straight forward for your bot?
@@ -325,7 +325,7 @@ class Piggy(PiggyParent):
         # make sure servo is straight
         self.servo(self.MIDPOINT)
         while self.read_distance() < self.SAFE_DISTANCE - 40:
-            self.left(primary= 60, counter= 0)
+            self.left(primary= 40, counter= 0)
             time.sleep(.05)
         # stop motion before we end the method
         self.stop()
