@@ -345,6 +345,7 @@ class Piggy(PiggyParent):
                 turn_count += 1
                 self.stop()
                 #self.turn_until_clear()
+                ans = self.right_or_left()
                 if turn_count % 4 == 0:
                     self.back()
                     time.sleep(.75)
@@ -352,7 +353,7 @@ class Piggy(PiggyParent):
                     self.turn_to_deg(exit_ang)
                 elif 'l' in self.right_or_left():
                     self.turn_by_deg(-45)
-                elif 'r' in self.right_or_left():
+                elif 'r' in ans:
                     self.turn_by_deg(45)
                 else:
                     print("self.right_or_left has a problem if being used")
