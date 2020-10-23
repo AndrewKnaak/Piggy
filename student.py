@@ -351,7 +351,7 @@ class Piggy(PiggyParent):
                     time.sleep(.75)
                     self.stop()
                     self.turn_to_deg(exit_ang)
-                elif 'l' in self.right_or_left():
+                elif 'l' in ans:
                     self.turn_by_deg(-45)
                 elif 'r' in ans:
                     self.turn_by_deg(45)
