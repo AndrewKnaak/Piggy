@@ -355,6 +355,7 @@ class Piggy(PiggyParent):
                 elif 'r' in self.right_or_left():
                     self.turn_by_deg(45)
                 else:
+                    print("self.right_or_left has a problem if being used")
                     self.turn_until_clear()
             else:
                 self.fwd()
